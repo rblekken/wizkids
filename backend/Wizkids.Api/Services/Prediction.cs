@@ -7,4 +7,3 @@ namespace Wizkids.Api.Services
         public List<string> DictionaryWords { get; set; } = new List<string>();
     }
 }
-

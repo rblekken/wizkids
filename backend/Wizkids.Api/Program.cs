@@ -16,7 +16,6 @@ builder.Services.Configure<PredictionClientOptions>(builder.Configuration.GetSec
 builder.Services.AddDbContext<DictionaryContext>(options => {
     options.UseSqlite($"Datasource={settings.Datasource}");
 }, ServiceLifetime.Singleton);
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
