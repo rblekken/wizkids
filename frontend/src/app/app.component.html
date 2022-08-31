@@ -1,0 +1,24 @@
+<h2>WizKids</h2>
+<div>
+  <span>language: {{language}}</span>
+  <span class="left-margin"><button (click)="switchLanguage()">Switch</button></span>
+</div>
+<div>
+  <textarea (keyup)="textChanged($event)"></textarea>
+</div>
+<div>
+  <div class="float-left">
+    <h3>Custom</h3>
+    <select name="Custom" size="5" >
+      <option *ngFor="let word of customWords" value={{word}}>{{word}}</option>
+    </select>
+  </div>
+  <div class="float-left left-margin">
+    <h3>Dictionary</h3>
+    <select name="Dictionary" size="5" >
+      <option *ngFor="let word of dictionaryWords" value={{word}}>{{word}}</option>
+    </select>
+  </div>
+</div>
+
+
