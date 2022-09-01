@@ -6,25 +6,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  language = "en-GB"
-  customWords = [];
-  dictionaryWords = []
+  language:string = "en-GB";
+  customWords:string[] = [];
+  dictionaryWords:string[] = [];
 
   async textChanged(event: KeyboardEvent){
-    var target = event.target as HTMLInputElement
-    console.log(target.value);
-    const response = await fetch("/api/Prediction?word="+target.value+"&language="+this.language+"");
+    let target = event.target as HTMLInputElement;
+    const response = await fetch(`/api/Prediction?word=${target.value}&language=${this.language}`);
     const predictionResult = await response.json();
-    console.log(predictionResult);
     this.customWords = predictionResult.customWords;
     this.dictionaryWords = predictionResult.dictionaryWords;
   }
-  
-  switchLanguage(){
+
+ switchLanguage(){
     if(this.language === "en-GB")
-      this.language = "da-DK"
+      this.language = "da-DK";
     else
       this.language = "en-GB";
   }
 }
-
