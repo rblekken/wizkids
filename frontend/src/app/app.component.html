@@ -1,24 +1,43 @@
-<h2>WizKids</h2>
-<div>
-  <span>language: {{language}}</span>
-  <span class="left-margin"><button (click)="switchLanguage()">Switch</button></span>
-</div>
-<div>
-  <textarea (keyup)="textChanged($event)"></textarea>
-</div>
-<div>
-  <div class="float-left">
-    <h3>Custom</h3>
-    <select name="Custom" size="5" >
-      <option *ngFor="let word of customWords" value={{word}}>{{word}}</option>
-    </select>
+<div class="page">
+  <h1>Wizkids</h1>
+  <div class="container">
+    <mat-button-toggle-group (change)="onLanguageChanged($event.value)" value="{{language}}">
+      <mat-button-toggle value="en-GB">en-GB</mat-button-toggle>
+      <mat-button-toggle value="da-DK">da-DK</mat-button-toggle>
+    </mat-button-toggle-group>
   </div>
-  <div class="float-left left-margin">
-    <h3>Dictionary</h3>
-    <select name="Dictionary" size="5" >
-      <option *ngFor="let word of dictionaryWords" value={{word}}>{{word}}</option>
-    </select>
+
+  <div class="container">
+    <mat-form-field class="full-width" appearance="fill">
+      <textarea matInput (keyup)="textChanged($event)"></textarea>
+    </mat-form-field>
+  </div>
+
+  <div class="container" space-between>
+    <div class="container-c">
+      <div>
+        <h3>Dictionary</h3>
+      </div>
+      <div>
+        <mat-form-field appearance="fill">
+          <select matNativeControl size="5">
+            <option *ngFor="let word of dictionaryWords" value={{word}}>{{word}}</option>
+          </select>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="container-c">
+      <div>
+        <h3>Custom</h3>
+      </div>
+      <div>
+        <mat-form-field appearance="fill">
+          <select matNativeControl size="5">
+            <option *ngFor="let word of customWords" value={{word}}>{{word}}</option>
+          </select>
+        </mat-form-field>
+      </div>
+    </div>
   </div>
 </div>
-
-
