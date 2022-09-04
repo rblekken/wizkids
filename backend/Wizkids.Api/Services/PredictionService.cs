@@ -24,6 +24,7 @@ public class PredictionService : IPredictionService
                 .AsNoTracking()
                 .Where(x => !string.IsNullOrWhiteSpace(x.Value) && x.Value.StartsWith(lastWord))
                 .OrderBy(x => x.Value)
+                .Take(20)
                 .Select(x => x.Value)
                 .ToList() ?? new List<string>();
 
