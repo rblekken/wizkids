@@ -4,7 +4,7 @@ using Microsoft.Extensions.Options;
 namespace Wizkids.Api.Client.Prediction;
 public class PredictionClient : IPredictionClient
 {
-    private string Token => "MjAyMi0wOC0yOQ==.cnVuYXIuYmxla2tlbkBnbWFpbC5jb20=.MTU5ZjFjNzEyZDk5YTMyNDkyMTVlNTNiYzU2OGRiYjY=";
+    private string Token => "MjAyMi0xMC0yNA==.dGVzdGluZy10ZXRAZ21haWwuY29t.ZDMxY2NhYTc4M2Q3MWM0ZDVhNjU5M2FmYmM4YmQyYzQ=";
     private HttpClient _predictionClient;
     private PredictionClientOptions _clientOptions;
 
